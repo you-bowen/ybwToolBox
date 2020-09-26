@@ -1,22 +1,15 @@
-# Quasar App (awesome)
+# ybwToolBox
 
 A Quasar Framework app
 
-## Install the dependencies
-```bash
-yarn
-```
+## 代码笔记本
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
+	妈妈再也不用担心我写代码磨磨蹭蹭了
 
+## 多重时间轴
 
-### Build the app for production
-```bash
-quasar build
-```
+	妈妈再也不用担心我同时打多个比赛管理不好时间了
 
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+## 班委点名
+	
+	妈妈再也不用担心我们班的同学没交截图我查不出来了！
