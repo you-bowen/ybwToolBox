@@ -9,7 +9,13 @@
           <q-input v-model="input.key" label="key" ref="key" @keyup.enter="focusOnValue" />
         </div>
         <div style="max-width:200px" class="q-pa-md">
-          <q-input v-model="input.value" label="value" ref="value" @keyup.enter="add" />
+          <q-input
+            v-model="input.value"
+            label="value"
+            type="textarea"
+            style="max-height:50px"
+            ref="value"
+          />
         </div>
       </div>
 
@@ -109,7 +115,7 @@ export default {
   methods: {
     del(index) {
       this.rubbishLists.data.splice(index, 1);
-      localStorage.setItem("data", JSON.stringify(this.lists));
+      localStorage.setItem("snippet", JSON.stringify(this.lists));
       localStorage.setItem("rubbish", JSON.stringify(this.rubbishLists));
     },
     del2bin(index) {
@@ -117,7 +123,7 @@ export default {
       this.lists[index].show.field = false;
       this.lists[index].edit = { name: "edit", icon: "edit" };
       this.rubbishLists.data.unshift(this.lists.splice(index, 1)[0]);
-      localStorage.setItem("data", JSON.stringify(this.lists));
+      localStorage.setItem("snippet", JSON.stringify(this.lists));
       localStorage.setItem("rubbish", JSON.stringify(this.rubbishLists));
     },
     add() {
@@ -137,7 +143,7 @@ export default {
       this.input.value = "";
       this.input.key = "";
       this.$refs.key.focus();
-      localStorage.setItem("data", JSON.stringify(this.lists));
+      localStorage.setItem("snippet", JSON.stringify(this.lists));
       localStorage.setItem("rubbish", JSON.stringify(this.rubbishLists));
       // document.querySelector(".key").focus();
     },
@@ -150,7 +156,7 @@ export default {
         this.lists[index].show.field = false;
         this.lists[index].show.menu = !this.lists[index].show.menu;
       }
-      localStorage.setItem("data", JSON.stringify(this.lists));
+      localStorage.setItem("snippet", JSON.stringify(this.lists));
       localStorage.setItem("rubbish", JSON.stringify(this.rubbishLists));
     },
     show_menu(index) {
@@ -191,12 +197,12 @@ export default {
     },
     cleanAll() {
       this.lists = [];
-      localStorage.setItem("data", JSON.stringify(this.lists));
+      localStorage.setItem("snippet", JSON.stringify(this.lists));
       localStorage.setItem("rubbish", JSON.stringify(this.rubbishLists));
     },
     cleanAll_rb() {
       this.rubbishLists.data = [];
-      localStorage.setItem("data", JSON.stringify(this.lists));
+      localStorage.setItem("snippet", JSON.stringify(this.lists));
       localStorage.setItem("rubbish", JSON.stringify(this.rubbishLists));
     },
     showBin() {
@@ -205,7 +211,7 @@ export default {
     back(index) {
       this.rubbishLists.data[index].show.menu = false;
       this.lists.unshift(this.rubbishLists.data.splice(index, 1)[0]);
-      localStorage.setItem("data", JSON.stringify(this.lists));
+      localStorage.setItem("snippet", JSON.stringify(this.lists));
       localStorage.setItem("rubbish", JSON.stringify(this.rubbishLists));
       // reload();
       this.$router.go(0);
@@ -228,7 +234,7 @@ export default {
   mounted() {
     console.log("myinput");
     this.$refs.key.focus();
-    const a = JSON.parse(localStorage.getItem("data"));
+    const a = JSON.parse(localStorage.getItem("snippet"));
     const b = JSON.parse(localStorage.getItem("rubbish"));
     if (a === null) {
       this.lists = [];

@@ -5,9 +5,9 @@ const routes: RouteConfig[] = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/mainPage.vue') },
-      { path: '/settings', component: () => import('pages/settings.vue') },
-      { path: '/test', component: () => import('pages/test.vue') },
+      { path: '', component: () => import('pages/snippet.vue') },
+      { path: '/timeRoute', component: () => import('pages/timeRoute.vue') },
+      { path: '/note', component: () => import('pages/note.vue') },
       { path: '/check', component: () => import('pages/check.vue') },
     ]
   },

@@ -9,17 +9,20 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@iktakahiro/markdown-it-katex": "^4.0.0",
     "@quasar/extras": "^1.0.0",
     "@vue/composition-api": "^0.6.4",
     "animate.css": "^4.1.1",
     "axios": "^0.18.1",
     "core-js": "^3.6.5",
+    "markdown-it": "^11.0.1",
     "quasar": "^1.0.0",
     "v-clipboard": "^2.2.3",
     "vue-i18n": "^8.0.0"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",
+    "@quasar/quasar-app-extension-qmarkdown": "^1.0.31",
     "@types/node": "^10.17.15"
   },
   "browserslist": [

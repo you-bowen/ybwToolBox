@@ -48,13 +48,8 @@
         v-model="thing.value"
         label="value"
         style="max-width:200px"
-      >
-        <template v-slot:append>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg" />
-          </q-avatar>
-        </template>
-      </q-input>
+        type="textarea"
+      ></q-input>
     </div>
   </div>
 </template>

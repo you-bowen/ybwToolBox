@@ -41,7 +41,7 @@ import EssentialLink from "components/EssentialLink.vue";
 
 const linksData = [
   {
-    title: "notebook",
+    title: "snippet",
     caption: "you best choice",
     icon: "dashboard",
     link: "/",
@@ -50,13 +50,13 @@ const linksData = [
     title: "time table",
     caption: "manage yourself",
     icon: "wysiwyg",
-    link: "/settings",
+    link: "/timeRoute",
   },
   {
-    title: "test",
-    caption: "test something",
-    icon: "settings",
-    link: "/test",
+    title: "note",
+    caption: "my note",
+    icon: "note",
+    link: "/note",
   },
   {
     title: "check",

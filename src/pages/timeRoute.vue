@@ -108,7 +108,8 @@ export default {
       if (this.DAYS == null || this.EVENT == null) {
         this.ALERT.nullValue = true;
       } else {
-        var data = { val: { min: null, max: null }, event: null ,info: null};
+        console.log("test");
+        var data = { val: { min: null, max: null }, event: null, info: null };
         data.info = this.DAYS;
         data.val.min = calc(this.DATE, this.DAYS.from, 1);
         data.val.max = calc(this.DATE, this.DAYS.to, 0);
@@ -120,15 +121,14 @@ export default {
           this.DAYS = null;
           this.EVENT = null;
           this.ALERT.create = false;
-          localStorage.setItem("data", JSON.stringify(this.timeTable));
+          localStorage.setItem("timeRoute", JSON.stringify(this.timeTable));
         }
       }
     },
     clear_all() {
-      localStorage.clear();
+      localStorage.removeItem("timeRoute");
     },
   },
-  computed(){},
   mounted() {
     function calc(date1, date2, mode) {
       if (mode) {
@@ -157,12 +157,12 @@ export default {
     var date = new Date();
     this.DATE = date;
     try {
-      const a = JSON.parse(localStorage.getItem("data"));
+      const a = JSON.parse(localStorage.getItem("timeRoute"));
       if (a === null) {
         this.timeTable = [];
       } else {
         this.timeTable = a;
-        for(var i=0;i<this.timeTable.length;i++){
+        for (var i = 0; i < this.timeTable.length; i++) {
           this.timeTable[i].val.min = calc(this.DATE, this.info.from, 1);
           this.timeTable[i].val.max = calc(this.DATE, this.info.to, 0);
         }
